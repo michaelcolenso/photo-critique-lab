@@ -1,0 +1,225 @@
+{
+  "note": "Synthetic engineering fixtures, not evidence of photographic judgment quality. A licensed real-photo golden set must be evaluated before a photographer study.",
+  "images": [
+    {
+      "file": "portrait-1.jpg",
+      "category": "portrait",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "portrait-2.jpg",
+      "category": "portrait",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "portrait-3.jpg",
+      "category": "portrait",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "portrait-4.jpg",
+      "category": "portrait",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "landscape-1.jpg",
+      "category": "landscape",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "landscape-2.jpg",
+      "category": "landscape",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "landscape-3.jpg",
+      "category": "landscape",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "street-1.jpg",
+      "category": "street",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "street-2.jpg",
+      "category": "street",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "street-3.jpg",
+      "category": "street",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "architecture-1.jpg",
+      "category": "architecture",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "architecture-2.jpg",
+      "category": "architecture",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "pets-1.jpg",
+      "category": "pets",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "pets-2.jpg",
+      "category": "pets",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "low-light-1.jpg",
+      "category": "low-light",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "low-light-2.jpg",
+      "category": "low-light",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "minimal-1.jpg",
+      "category": "minimal",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "minimal-2.jpg",
+      "category": "minimal",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "busy-1.jpg",
+      "category": "busy",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    },
+    {
+      "file": "busy-2.jpg",
+      "category": "busy",
+      "synthetic": true,
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      }
+    }
+  ]
+}
