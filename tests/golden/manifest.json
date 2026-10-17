@@ -1,0 +1,405 @@
+{
+  "description": "Twenty licensed public photographs for live photographic evaluation. These are not user uploads. Geometry invariants are requirements; semantic subject preservation awaits live/human review.",
+  "images": [
+    {
+      "file": "portrait-1.jpg",
+      "category": "portrait",
+      "source": "https://unsplash.com/photos/a-person-stands-in-light-streaming-from-a-window-Di328aD5ewA",
+      "author": "Luis Gherasim",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1748957989001-1ec50c20ac08?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1067,
+      "height": 1600,
+      "sha256": "1797432c45f4776700f6dcabecc1a1128df1fe33d7dbcbd97dc283905b2305e8"
+    },
+    {
+      "file": "portrait-2.jpg",
+      "category": "portrait",
+      "source": "https://unsplash.com/photos/a-person-looking-out-a-window-yfCs8Db-fuQ",
+      "author": "Egor Shilref",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1660485722522-d5a596f58189?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1067,
+      "height": 1600,
+      "sha256": "9ebf6dc6e814921d3dcdbf1aa98a7b8b84722147f67024b6987b6e75161a2407"
+    },
+    {
+      "file": "portrait-3.jpg",
+      "category": "portrait",
+      "source": "https://unsplash.com/photos/a-man-smiling-in-front-of-a-window-7fXswhCS9Fk",
+      "author": "Maccy",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1769961982389-bb243681421a?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1600,
+      "height": 1067,
+      "sha256": "bd6d38451b02a80c55dddcd2b1db23dbeebedc6e045b2340b745ba0bd3c460ef"
+    },
+    {
+      "file": "portrait-4.jpg",
+      "category": "portrait",
+      "source": "https://unsplash.com/photos/a-man-standing-in-front-of-a-window-PMpDnhLPUn4",
+      "author": "Jonathan Caliguire",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1732919258508-3fd53a8007b6?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1069,
+      "height": 1600,
+      "sha256": "f3fe3482e94d6e660166443c3c4d7f528ab31bfef16a0f3b9182ca5aefd3f387"
+    },
+    {
+      "file": "landscape-1.jpg",
+      "category": "landscape",
+      "source": "https://unsplash.com/photos/deer-in-yosemite-valley-meadow-UCd78vfC8vU",
+      "author": "Johannes Andersson",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1472396961693-142e6e269027?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 969,
+      "height": 1600,
+      "sha256": "02bb463cbd969e678a6b0715b624babca1b1a26226539f3da7772d6deed2e98b"
+    },
+    {
+      "file": "landscape-2.jpg",
+      "category": "landscape",
+      "source": "https://unsplash.com/photos/a-lake-surrounded-by-mountains-mIj8Cn3oNDg",
+      "author": "ConfinedRiley",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1669604120699-eeba651ac235?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1067,
+      "height": 1600,
+      "sha256": "d91bb08b3ecaf480455e12a53f4c4641ac5bc442988473a640f5d7494515fa47"
+    },
+    {
+      "file": "landscape-3.jpg",
+      "category": "landscape",
+      "source": "https://unsplash.com/photos/landscape-photography-of-mountain-surrounded-by-pine-trees-and-body-of-water-4qKVQYOluDk",
+      "author": "Yoshi Takekawa",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1476041178066-aa562074def7?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1600,
+      "height": 900,
+      "sha256": "07c71194b1792bc79c0d6c82bce5a2c8e2da37c27ba4f5d93086076c45d6a420"
+    },
+    {
+      "file": "street-1.jpg",
+      "category": "street",
+      "source": "https://unsplash.com/photos/a-busy-city-street-with-people-walking-around-tVhogIDFMww",
+      "author": "Saul Macias",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1714244493437-199cf4f12568?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1600,
+      "height": 1067,
+      "sha256": "b19e1299777b84b7808a135513ab08fc50559e8b29ee8a86191b1a2e48a27242"
+    },
+    {
+      "file": "street-2.jpg",
+      "category": "street",
+      "source": "https://unsplash.com/photos/two-men-walking-on-a-city-street-hkLI5gDP5Ss",
+      "author": "Haberdoedas",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1777467025932-2c6569c7e3c9?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1200,
+      "height": 1600,
+      "sha256": "15d55da20e995a63e0b01c6464da675002bf47fa366d0f16405cc6f5475620f6"
+    },
+    {
+      "file": "street-3.jpg",
+      "category": "street",
+      "source": "https://unsplash.com/photos/man-walks-down-a-crowded-market-alleyway-oG5vvES890s",
+      "author": "Benjamin Chambon",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1761828122542-ae6804ea8a8d?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1067,
+      "height": 1600,
+      "sha256": "708e0f5b2bb00efe262bee40bad22e20c27c55ad1e30ffb64fbc3e5b4dbc3179"
+    },
+    {
+      "file": "architecture-1.jpg",
+      "category": "architecture",
+      "source": "https://unsplash.com/photos/modern-building-with-geometric-architectural-elements-N50VWes0FlM",
+      "author": "Vidar Nordli-Mathisen",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1776719315520-50ca2d9c7365?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1600,
+      "height": 1057,
+      "sha256": "c59fce70f1f0cce829b54c2330cb29f9598de21609a59fd74d80105250ab12a3"
+    },
+    {
+      "file": "architecture-2.jpg",
+      "category": "architecture",
+      "source": "https://unsplash.com/photos/modern-building-with-reflecting-pool-under-blue-sky-wlw2jFVMJWE",
+      "author": "Declan Sun",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1760624492251-38b304dce14c?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1067,
+      "height": 1600,
+      "sha256": "978f2473f34f4c88b82803588246994ad779753d2ddf16550d84a8ab3c2f81e0"
+    },
+    {
+      "file": "pets-1.jpg",
+      "category": "pets",
+      "source": "https://unsplash.com/photos/a-cat-sitting-on-top-of-a-building-8f-RFHuz4nk",
+      "author": "Alex jiang",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1653068002744-3def97ae16d7?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1067,
+      "height": 1600,
+      "sha256": "4712d6741db7512f4e4d25bb80b61fc6dd5401ee5b0f916e2cf6da4d907b81a2"
+    },
+    {
+      "file": "pets-2.jpg",
+      "category": "pets",
+      "source": "https://unsplash.com/photos/two-black-cats-sitting-on-the-steps-of-a-building-rkytzDaQxD8",
+      "author": "Nuh Enes Sakallı",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1671992070190-e3e835e582f4?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1600,
+      "height": 1200,
+      "sha256": "fe56bcc49a8b39d2999b045726a56c3ac537f5ff01f1fe571d646bb8d04191b2"
+    },
+    {
+      "file": "low-light-1.jpg",
+      "category": "low-light",
+      "source": "https://unsplash.com/photos/night-street-with-many-bright-neon-signs-x2S7K15nPwM",
+      "author": "Ale",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1767951446065-f56d7cc4adf8?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1060,
+      "height": 1600,
+      "sha256": "bd65deb56d5d152d92a69f5b621a7837080352a8bdc4636cfd9018a61851e9e5"
+    },
+    {
+      "file": "low-light-2.jpg",
+      "category": "low-light",
+      "source": "https://unsplash.com/photos/a-city-street-at-night-with-neon-lights-zAPdG0xERpw",
+      "author": "Serj Sakharovskiy",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1633858051938-38b402e34465?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1600,
+      "height": 1067,
+      "sha256": "094e0cd2afa2afb67dd5f1b32e9f3c5332f25bc799426a92bd799d116fc835a0"
+    },
+    {
+      "file": "minimal-1.jpg",
+      "category": "minimal",
+      "source": "https://unsplash.com/photos/a-shadow-of-an-object-on-a-wall-epV-vCwqfdc",
+      "author": "Alina Tulum",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1689608741508-bbd8dbd466d9?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1200,
+      "height": 1600,
+      "sha256": "7adaee32dec9b1839cf3200e4c4c69a26c06ce202a14926dad925eec1fe094b1"
+    },
+    {
+      "file": "minimal-2.jpg",
+      "category": "minimal",
+      "source": "https://unsplash.com/photos/person-holding-green-plant-near-white-wall-NkjOruABc8o",
+      "author": "☀️Shine_ Photos",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1621212982463-b9d2878f8d7e?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1199,
+      "height": 1600,
+      "sha256": "98dd397051b550c28f988868cb321b5ae41a6a297005300fdef24ac975865290"
+    },
+    {
+      "file": "busy-1.jpg",
+      "category": "busy",
+      "source": "https://unsplash.com/photos/crowded-market-with-vendors-selling-produce-and-goods-ZPA2iICRetk",
+      "author": "Jin-Woo Lee",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1759663783558-fa350d7a6734?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1600,
+      "height": 1067,
+      "sha256": "710244e5fe6014ddc5b5d5b9bf9549d432154da7e93cfb928ce2a06b37b58933"
+    },
+    {
+      "file": "busy-2.jpg",
+      "category": "busy",
+      "source": "https://unsplash.com/photos/crowded-market-with-many-people-shopping-NMWVIN2szQg",
+      "author": "chansu shin",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "downloadUrl": "https://images.unsplash.com/photo-1751942798146-aff886f6f18a?fit=max&w=1600&h=1600&q=85&fm=jpg",
+      "retrievedOn": "2026-10-17",
+      "invariants": {
+        "must_return_three_crops": true,
+        "crop_bounds_valid": true,
+        "wildcard_materially_distinct": true,
+        "subject_not_accidentally_excluded": true
+      },
+      "liveReview": "pending_credentials",
+      "width": 1600,
+      "height": 1061,
+      "sha256": "3d0233800d922b03100489192e16e078013e07f52c7f92660dd8a5e6f0c1eeaf"
+    }
+  ]
+}

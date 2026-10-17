@@ -1,0 +1,43 @@
+{
+  "name": "photo-critique-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "fixtures": "node scripts/generate-fixtures.mjs",
+    "cf:dev": "wrangler dev --ip 0.0.0.0",
+    "cf:check": "wrangler deploy --dry-run",
+    "deploy": "npm run build && wrangler deploy",
+    "smoke": "node scripts/smoke.mjs",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@lucide/svelte": "^1.59.0",
+    "@sveltejs/adapter-cloudflare": "^7.2.9",
+    "@sveltejs/kit": "^2.70.3",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "openai": "^7.36.0",
+    "svelte": "^5.57.2",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.4",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
+    "prettier": "^3.9.10",
+    "prettier-plugin-svelte": "^4.1.1",
+    "sharp": "^0.35.5",
+    "svelte-check": "^4.7.7",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5",
+    "wrangler": "^4.151.1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "photo-critique-lab",
+  "main": ".svelte-kit/cloudflare/_worker.js",
+  "compatibility_date": "2026-10-17",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".svelte-kit/cloudflare",
+    "binding": "ASSETS"
+  },
+  "vars": { "OPENAI_MODEL": "gpt-5-mini" },
+  "analytics_engine_datasets": [
+    { "binding": "VALIDATION_EVENTS", "dataset": "pcl_validation_events" }
+  ],
+  "observability": { "enabled": false }
+}

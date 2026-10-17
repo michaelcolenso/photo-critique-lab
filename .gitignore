@@ -1,0 +1,11 @@
+node_modules/
+.svelte-kit/
+.wrangler/
+.env
+.env.local
+.dev.vars
+!.env.example
+test-results/
+playwright-report/
+coverage/
+artifacts/
