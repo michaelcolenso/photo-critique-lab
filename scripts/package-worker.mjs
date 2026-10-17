@@ -1,9 +1,22 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, cp, rm } from 'node:fs/promises';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { createHash } from 'node:crypto';
 const run = promisify(execFile);
 await mkdir('artifacts', { recursive: true });
+// The adapter entry references output/server and cloudflare-tmp; ship Wrangler's linked bundle.
+await rm('artifacts/worker-bundle', { recursive: true, force: true });
+await rm('artifacts/worker-stage', { recursive: true, force: true });
+const bundle = await run(process.execPath, [
+  'node_modules/wrangler/bin/wrangler.js',
+  'deploy',
+  '--dry-run',
+  '--outdir',
+  'artifacts/worker-bundle'
+]);
+console.log(bundle.stdout);
+await cp('.svelte-kit/cloudflare', 'artifacts/worker-stage', { recursive: true });
+await cp('artifacts/worker-bundle/_worker.js', 'artifacts/worker-stage/_worker.js');
 const { stdout } = await run('git', ['rev-parse', 'HEAD']);
 const commit = stdout.trim();
 await run('tar', [
@@ -15,7 +28,7 @@ await run('tar', [
   '-czf',
   'artifacts/worker.tar.gz',
   '-C',
-  '.svelte-kit/cloudflare',
+  'artifacts/worker-stage',
   '.'
 ]);
 const bytes = await readFile('artifacts/worker.tar.gz');

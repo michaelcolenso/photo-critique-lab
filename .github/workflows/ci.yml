@@ -85,7 +85,6 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run check:client
-      - run: npm run cf:check
       - run: npm run package:worker
       - run: npm run verify:worker
         env:

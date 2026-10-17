@@ -12,7 +12,7 @@ Download coverage (HTML/LCOV/JSON), JUnit XML, Playwright HTML reports and failu
 
 The build artifact includes `worker.tar.gz`, a source-commit/digest manifest, checksums and a CycloneDX production-dependency SBOM. A separate job downloads that artifact and tests it without rebuilding. A client-output check rejects server-key identifiers or the test critique in browser assets. Only explicit report/bundle paths are uploaded; env files and user photographs are not collected.
 
-`Security` scans JavaScript/TypeScript and Actions with CodeQL on pushes to main/work, PRs and weekly. Dependency review blocks high/critical vulnerabilities introduced in a PR. Dependabot proposes npm and Actions updates weekly; compatible npm updates are grouped, major migrations remain separate, and merges remain reviewable. An npm audit can still report lower-severity findings while passing its explicit high-severity gate.
+`Security` scans JavaScript/TypeScript and Actions with CodeQL on pushes to main/work, PRs and weekly. Native dependency review blocks high/critical vulnerabilities introduced in a PR when GitHub Dependency graph is enabled. If that feature is unavailable, the job records the limitation and runs a blocking npm lockfile audit at the same severity threshold instead. Unexpected API failures fail the job. The graph is currently disabled and enabling it is outside this integration's permissions; the fallback remains active. Dependabot proposes npm and Actions updates weekly; compatible npm updates are grouped, major migrations remain separate, and merges remain reviewable. An npm audit can still report lower-severity findings while passing its explicit high-severity gate.
 
 ## Deployment setup (currently deferred)
 

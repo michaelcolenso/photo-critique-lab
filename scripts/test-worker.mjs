@@ -1,14 +1,21 @@
 import { spawn } from 'node:child_process';
-import { mkdir, open } from 'node:fs/promises';
+import { mkdir, open, mkdtemp, rm } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
+import { resolve } from 'node:path';
 import { setTimeout as pause } from 'node:timers/promises';
 await mkdir('artifacts', { recursive: true });
 const log = await open('artifacts/worker.log', 'w');
+const runtime = await mkdtemp('artifacts/runtime-');
+execFileSync('tar', ['-xzf', 'artifacts/worker.tar.gz', '-C', runtime]);
 const base = 'http://127.0.0.1:8787';
 const worker = spawn(
   process.execPath,
   [
     'node_modules/wrangler/bin/wrangler.js',
     'dev',
+    resolve(runtime, '_worker.js'),
+    '--assets',
+    resolve(runtime),
     '--ip',
     '127.0.0.1',
     '--port',
@@ -63,4 +70,5 @@ try {
 } finally {
   stop();
   await log.close();
+  await rm(runtime, { recursive: true, force: true });
 }
