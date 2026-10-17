@@ -12,5 +12,14 @@
   "analytics_engine_datasets": [
     { "binding": "VALIDATION_EVENTS", "dataset": "pcl_validation_events" }
   ],
-  "observability": { "enabled": false }
+  "observability": { "enabled": false },
+  "env": {
+    "staging": {
+      "name": "photo-critique-lab-staging",
+      "vars": { "OPENAI_MODEL": "gpt-5-mini" },
+      "analytics_engine_datasets": [
+        { "binding": "VALIDATION_EVENTS", "dataset": "pcl_validation_events_staging" }
+      ]
+    }
+  }
 }

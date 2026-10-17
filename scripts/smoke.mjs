@@ -8,6 +8,11 @@ for (const path of ['/', '/privacy', '/sample.jpg', '/favicon.svg']) {
   assert.equal(r.status, 200, path);
 }
 const headers = { 'content-type': 'application/json', origin: new URL(base).origin };
+const healthResponse = await request('/api/health');
+assert.equal(healthResponse.status, 200, 'Health endpoint');
+assert.equal(healthResponse.headers.get('cache-control'), 'no-store');
+const health = await healthResponse.json();
+assert.equal(health.status, 'ok');
 const sample = await readFile(new URL('../tests/fixtures/blocks.png', import.meta.url));
 // Use sharp only in this Node smoke script to make a stripped JPEG proxy.
 const { default: sharp } = await import('sharp');
@@ -20,20 +25,23 @@ const technical = {
   sharpness: { global: 0 },
   histogram: { luminance: bins, red: bins, green: bins, blue: bins }
 };
-const response = await request('/api/critique', {
-  method: 'POST',
-  headers,
-  body: JSON.stringify({ image, technical, mode: 'portfolio' })
-});
-if (process.env.PCL_EXPECT_AI === 'true') {
-  assert.equal(response.status, 200, 'Live critique');
-  const body = await response.json();
-  assert.equal(body.critique.crops.length, 3);
-} else {
-  assert.equal(response.status, 503, 'Deferred credential behavior');
-  assert.match((await response.json()).error, /not configured/);
+// The default smoke never calls a configured model. Live calls require an explicit opt-in.
+if (process.env.PCL_EXPECT_AI === 'true' || health.critique === 'unavailable') {
+  const response = await request('/api/critique', {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({ image, technical, mode: 'portfolio' })
+  });
+  if (process.env.PCL_EXPECT_AI === 'true') {
+    assert.equal(response.status, 200, 'Live critique');
+    const body = await response.json();
+    assert.equal(body.critique.crops.length, 3);
+  } else {
+    assert.equal(response.status, 503, 'Deferred credential behavior');
+    assert.match((await response.json()).error, /not configured/);
+  }
+  assert.equal(response.headers.get('cache-control'), 'no-store');
 }
-assert.equal(response.headers.get('cache-control'), 'no-store');
 const bad = await request('/api/critique', {
   method: 'POST',
   headers,

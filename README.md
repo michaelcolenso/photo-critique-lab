@@ -4,6 +4,8 @@ A validation MVP for photographic judgment and literal crop discovery. Upload â†
 
 Built with Svelte 5, SvelteKit 2, TypeScript, Tailwind, Zod, Canvas, a dedicated analysis Web Worker, the official OpenAI SDK, and Cloudflare Workers/Analytics Engine.
 
+GitHub Actions provides CI on pushes/PRs and nightly, Node 22/24 tests with coverage gates, Chromium/Firefox/WebKit checks, production Worker tests, CodeQL, dependency review, Dependabot, verified release artifacts/SBOM/provenance, and credential-gated deployment, rollback, monitoring and live golden evaluation. See [automation operations](docs/AUTOMATION.md) for setup and the controls that preserve deferred credentials.
+
 ```sh
 npm ci
 npm run dev
@@ -26,7 +28,7 @@ npm run cf:dev
 npm run smoke
 ```
 
-Playwright defaults to `/usr/bin/chromium`. Set `CHROMIUM_PATH` to your local Chromium executable, or install Playwright Chromium and pass its path. Tests run desktop and a 320px touch viewport; the mobile project uses Chromium emulation, not a claim of WebKit/iOS certification. Regenerate the synthetic engineering fixtures with `npm run fixtures`. Twenty licensed public photographs for live golden-set evaluation are included in `tests/golden/`, with sources, attribution and pinned checksums; see [the fixture guide](tests/golden/README.md).
+Playwright uses its installed browsers in CI. Locally it uses `/usr/bin/chromium` when available, or Playwright Chromium; `CHROMIUM_PATH` overrides that choice. Run `npx playwright install chromium` if needed. Desktop and 320px touch Chromium are the default projects. Set `PCL_CROSS_BROWSER=true` to add Firefox and 320px WebKit, after installing those browsers with Playwright. This is browser-engine coverage, not native-device certification. Regenerate the synthetic engineering fixtures with `npm run fixtures`. Twenty licensed public photographs for live golden-set evaluation are included in `tests/golden/`, with sources, attribution and pinned checksums; see [the fixture guide](tests/golden/README.md).
 
 On restricted managed workspaces where the default user config directory is read-only, set `XDG_CONFIG_HOME` to a writable directory (for example `/tmp/pcl-config`) and optionally `WRANGLER_LOG_PATH=/tmp/pcl-wrangler.log` for local commands. This changes local tool paths, not application behavior.
 

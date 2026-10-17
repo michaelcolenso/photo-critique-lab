@@ -1,0 +1,52 @@
+name: Live golden evaluation
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_billable:
+        description: I approve live billable critique requests for the selected public fixtures
+        type: boolean
+        default: false
+        required: true
+      count:
+        description: Maximum number of public golden photographs
+        type: choice
+        options: ['1', '5', '20']
+        default: '1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: live-golden-evaluation
+  cancel-in-progress: false
+
+jobs:
+  evaluate:
+    if: inputs.confirm_billable && vars.PCL_LIVE_EVAL_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    environment: ai-evaluation
+    env:
+      PCL_BASE_URL: ${{ vars.CLOUDFLARE_URL }}
+      PCL_CONFIRM_BILLABLE: ${{ inputs.confirm_billable }}
+      PCL_EVAL_COUNT: ${{ inputs.count }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/evaluate-golden.mjs
+      - if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: golden-live-${{ github.run_id }}
+          path: artifacts/live-evaluation/
+          retention-days: 14
+          if-no-files-found: warn
