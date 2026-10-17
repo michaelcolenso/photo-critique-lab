@@ -111,4 +111,4 @@ jobs:
         env:
           SOURCE_SHA: ${{ needs.resolve.outputs.sha }}
         run: |
-          printf 'Deployed `%s` to **%s**: %s\n\nSmoke test passed; no live AI request was made.\n' "$SOURCE_SHA" "$PCL_TARGET" "$PCL_BASE_URL" >> "$GITHUB_STEP_SUMMARY"
+          printf 'Deployed %s to **%s**: %s\n\nSmoke test passed; no live AI request was made.\n' "$SOURCE_SHA" "$PCL_TARGET" "$PCL_BASE_URL" >> "$GITHUB_STEP_SUMMARY"
