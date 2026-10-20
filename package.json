@@ -15,7 +15,14 @@
     "cf:check": "wrangler deploy --dry-run",
     "deploy": "npm run build && wrangler deploy",
     "smoke": "node scripts/smoke.mjs",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:coverage": "vitest run --coverage",
+    "test:worker": "node scripts/test-worker.mjs",
+    "check:client": "node scripts/check-client.mjs",
+    "package:worker": "node scripts/package-worker.mjs",
+    "verify:worker": "node scripts/verify-worker.mjs",
+    "lint:actions": "bash scripts/lint-actions.sh"
   },
   "dependencies": {
     "@lucide/svelte": "^1.59.0",
@@ -32,6 +39,7 @@
   "devDependencies": {
     "@playwright/test": "^1.64.1",
     "@types/node": "^26.6.5",
+    "@vitest/coverage-v8": "^5.0.5",
     "prettier": "^3.9.10",
     "prettier-plugin-svelte": "^4.1.1",
     "sharp": "^0.35.5",
@@ -39,5 +47,8 @@
     "typescript": "^6.0.3",
     "vitest": "^5.0.5",
     "wrangler": "^4.151.1"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

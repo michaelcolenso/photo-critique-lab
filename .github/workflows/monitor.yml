@@ -1,0 +1,39 @@
+name: Deployed health
+
+on:
+  schedule:
+    - cron: '29 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deployed-health
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    if: vars.PCL_MONITOR_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        environment: [staging, production]
+    environment: ${{ matrix.environment }}
+    env:
+      PCL_BASE_URL: ${{ vars.CLOUDFLARE_URL }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Require a configured public origin
+        run: node -e 'if (!process.env.PCL_BASE_URL) throw new Error("Set CLOUDFLARE_URL for this environment")'
+      - name: Check deployed behavior without invoking AI
+        run: npm run smoke

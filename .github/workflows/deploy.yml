@@ -1,0 +1,114 @@
+name: Deploy
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Cloudflare environment
+        type: choice
+        options: [staging, production]
+        default: staging
+      ci_run_id:
+        description: Successful trusted-branch CI run id to deploy
+        type: string
+        required: true
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: deploy-${{ inputs.target || 'production' }}
+  cancel-in-progress: false
+
+jobs:
+  resolve:
+    if: vars.PCL_DEPLOY_ENABLED == 'true' && (github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.event.workflow_run.head_repository.full_name == github.repository))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      sha: ${{ steps.source.outputs.sha }}
+      run_id: ${{ steps.source.outputs.run_id }}
+      target: ${{ steps.source.outputs.target }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Verify source run and production freshness
+        id: source
+        run: node scripts/resolve-deployment.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PCL_CI_RUN_ID: ${{ inputs.ci_run_id || github.event.workflow_run.id }}
+          PCL_TARGET: ${{ inputs.target || 'production' }}
+
+  deploy:
+    name: Deploy verified Worker
+    needs: resolve
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment:
+      name: ${{ needs.resolve.outputs.target }}
+      url: ${{ steps.deploy.outputs.url }}
+    permissions:
+      contents: read
+      actions: read
+      deployments: write
+    env:
+      CI: 'true'
+      WRANGLER_SEND_METRICS: 'false'
+      PCL_TARGET: ${{ needs.resolve.outputs.target }}
+      PCL_BASE_URL: ${{ vars.CLOUDFLARE_URL }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.resolve.outputs.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - run: npm ci
+      - name: Check deployment configuration before modifying Cloudflare
+        run: node scripts/cloudflare-preflight.mjs
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: worker-${{ needs.resolve.outputs.sha }}
+          path: artifacts
+          run-id: ${{ needs.resolve.outputs.run_id }}
+          github-token: ${{ github.token }}
+      - run: npm run verify:worker
+        env:
+          PCL_EXPECTED_SHA: ${{ needs.resolve.outputs.sha }}
+      - run: mkdir -p .svelte-kit/cloudflare && tar -xzf artifacts/worker.tar.gz -C .svelte-kit/cloudflare
+      - name: Recheck freshness after any environment approval wait
+        run: node scripts/resolve-deployment.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PCL_CI_RUN_ID: ${{ needs.resolve.outputs.run_id }}
+      - name: Deploy the exact tested artifact
+        id: deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [[ "$PCL_TARGET" == staging ]]; then
+            npx wrangler deploy --env staging --strict --keep-vars
+          else
+            npx wrangler deploy --strict --keep-vars
+          fi
+          printf 'url=%s\n' "$PCL_BASE_URL" >> "$GITHUB_OUTPUT"
+      - name: Deployed smoke test without a billable AI request
+        run: npm run smoke
+      - name: Deployment summary
+        env:
+          SOURCE_SHA: ${{ needs.resolve.outputs.sha }}
+        run: |
+          printf 'Deployed %s to **%s**: %s\n\nSmoke test passed; no live AI request was made.\n' "$SOURCE_SHA" "$PCL_TARGET" "$PCL_BASE_URL" >> "$GITHUB_STEP_SUMMARY"
