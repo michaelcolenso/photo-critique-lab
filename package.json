@@ -25,15 +25,15 @@
     "lint:actions": "bash scripts/lint-actions.sh"
   },
   "dependencies": {
-    "@lucide/svelte": "^1.59.0",
+    "@lucide/svelte": "^1.61.0",
     "@sveltejs/adapter-cloudflare": "^7.2.9",
     "@sveltejs/kit": "^2.70.3",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "@tailwindcss/vite": "^4.3.3",
-    "openai": "^7.36.0",
+    "openai": "^7.43.0",
     "svelte": "^5.57.2",
     "tailwindcss": "^4.3.3",
-    "vite": "^8.3.4",
+    "vite": "^8.3.5",
     "zod": "^4.6.7"
   },
   "devDependencies": {
@@ -46,7 +46,7 @@
     "svelte-check": "^4.7.7",
     "typescript": "^6.0.3",
     "vitest": "^5.0.5",
-    "wrangler": "^4.151.1"
+    "wrangler": "^4.152.0"
   },
   "engines": {
     "node": ">=22.12.0"
